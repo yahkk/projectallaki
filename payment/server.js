@@ -14,7 +14,7 @@ app.use("/api/payment", paymentRouter);
 
 app.use(errorHandler);
 
-const port = process.env.PORT || 8082;
+const port = process.env.PORT || 3002;
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);

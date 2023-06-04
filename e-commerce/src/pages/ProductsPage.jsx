@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 async function getProducts() {
   const { data: products } = await axios.get(
-    "http://localhost:8080/api/products"
+    "http://localhost:3000/api/products"
   );
   return products;
 }

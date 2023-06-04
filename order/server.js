@@ -16,7 +16,7 @@ app.use("/api/orders", orderRouter);
 
 app.use(errorHandler);
 
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 3001;
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);

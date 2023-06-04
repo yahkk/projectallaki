@@ -14,7 +14,7 @@ app.use("/api/products", productRouter);
 
 app.use(errorHandler);
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);

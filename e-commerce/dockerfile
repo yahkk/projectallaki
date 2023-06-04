@@ -1,0 +1,15 @@
+# Étape 1: Build de l'application
+FROM node:latest AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install && npm run build
+
+# Étape 2: Exécution de l'application construite
+FROM node:latest
+WORKDIR /app
+COPY --from=builder /app/build ./build
+COPY package*.json ./
+RUN npm install --only=production \
+    && npm cache clean --force
+EXPOSE 5173
+CMD ["npm", "start"]

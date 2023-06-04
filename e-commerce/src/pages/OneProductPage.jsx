@@ -6,7 +6,7 @@ import { EnvelopeIcon } from "@heroicons/react/20/solid";
 // import { product } from "./productsData";
 async function getProducts(id) {
   const { data } = await axios.get(
-    `http://localhost:8080/api/products/${id}`
+    `http://localhost:3000/api/products/${id}`
   );
   return data.product;
 }
@@ -20,7 +20,7 @@ const OneProductPage = () => {
   });
   const navivate = useNavigate();
   async function handleClick() {
-    const { data } = await axios.post("http://localhost:8081/api/orders", {
+    const { data } = await axios.post("http://localhost:3001/api/orders", {
       productId: product._id,
       date: new Date(),
     });
